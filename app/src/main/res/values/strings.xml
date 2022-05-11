@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">GestorApp</string>
+    <string name="main_activity_label">Point of sale</string>
+    <string name="content_description_fab">Image Fab Button</string>
+    <string name="text_name">Name</string>
+    <string name="text_address">Address</string>
+    <string name="text_latitude">Latitude</string>
+    <string name="text_longitude">Longitude</string>
+    <string name="text_code">Code</string>
+    <string name="btn_add_store">Add Store</string>
+    <string name="content_description_image_map">Image Map</string>
+    <string name="content_description_icon_arrow">Icon arrow</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="content_description_image_camera">Image Camera</string>
+    <string name="btn_text_visit">Visit</string>
+    <string name="title_report_activity">Price Report</string>
+    <string name="btn_add_product">Add Product</string>
+    <string name="text_price">Price</string>
+    <string name="text_products">Products</string>
+    <string name="text_price_cost">Price cost</string>
+    <string name="text_wholesale_price">Wholesale Price</string>
+    <string name="text_stock">Stock</string>
+    <string name="text_profile">Profile</string>
+    <string name="text_save">Save</string>
+    <string name="text_version">v2.0.0</string>
+    <string name="text_company_name">Xplora</string>
+    <string name="text_email">Email</string>
+    <string name="text_password">Password</string>
+    <string name="btn_sign_in">Sign In</string>
+    <string name="description_image_profile">Image Profile</string>
+    <string name="text_point_of_sell">Point of Sell</string>
+    <string name="text_support">Support</string>
+    <string name="text_log_out">Log Out</string>
+</resources>

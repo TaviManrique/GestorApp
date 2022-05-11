@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+
+    <TextView
+        android:id="@+id/tvNameProduct"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.4"
+        android:layout_margin="1dp"
+        android:paddingHorizontal="8dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:text="Aceite" />
+
+    <EditText
+        android:id="@+id/etPriceProduct"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:layout_margin="1dp"
+        android:paddingHorizontal="8dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:ems="10"
+        android:maxLines="1"
+        android:inputType="numberDecimal"
+        tools:text="12.0"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/etWholesalePriceProduct"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:layout_margin="1dp"
+        android:paddingHorizontal="8dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:ems="10"
+        android:maxLines="1"
+        android:inputType="numberDecimal"
+        tools:text="10.5"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/etStock"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:layout_margin="1dp"
+        android:paddingHorizontal="8dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:ems="10"
+        android:maxLines="1"
+        android:inputType="number"
+        tools:text="24" />
+</LinearLayout>
