@@ -1,11 +1,13 @@
 package com.manriquetavi.gestorapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.manriquetavi.gestorapp.db.DatabaseHelperStore;
 
@@ -19,8 +21,7 @@ public class AddProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product);
-
-        mCode = getIntent().getIntExtra("code", 0);
+        mCode = getIntent().getIntExtra("code",0);
         etNameProduct = findViewById(R.id.etNameProduct);
         etPriceProduct = findViewById(R.id.etPriceProduct);
         etWholesalePriceProduct = findViewById(R.id.etWholesalePriceProduct);

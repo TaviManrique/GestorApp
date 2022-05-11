@@ -42,7 +42,7 @@
                 android:ellipsize="end"
                 android:textStyle="bold"
                 android:textColor="@color/black"
-                android:textSize="12sp"
+                android:textSize="18sp"
                 android:text="@string/text_products" />
 
             <TextView
@@ -58,6 +58,7 @@
                 android:ellipsize="end"
                 android:textStyle="bold"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 android:text="@string/text_price_cost" />
 
             <TextView
@@ -73,6 +74,7 @@
                 android:ellipsize="end"
                 android:textStyle="bold"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 android:text="@string/text_wholesale_price" />
 
             <TextView
@@ -88,6 +90,7 @@
                 android:ellipsize="end"
                 android:textStyle="bold"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 android:text="@string/text_stock" />
         </LinearLayout>
 

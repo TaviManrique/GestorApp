@@ -42,6 +42,7 @@ public class ReportActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ReportActivity.this, AddProductActivity.class);
                 intent.putExtra("code", mCode);
+                finish();
                 startActivity(intent);
             }
         });

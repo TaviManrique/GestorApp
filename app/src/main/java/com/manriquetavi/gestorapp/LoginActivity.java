@@ -30,7 +30,8 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 if (db_user.signIn(etEmail.getText().toString().trim(), etPassword.getText().toString().trim())) {
                     intent.putExtra("email", etEmail.getText().toString().trim());
-                    finish();
+                    etEmail.setText("");
+                    etPassword.setText("");
                     startActivity(intent);
                 }
             }

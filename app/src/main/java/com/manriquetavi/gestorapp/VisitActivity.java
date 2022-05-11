@@ -33,8 +33,8 @@ public class VisitActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visit);
 
-
         mCode = getIntent().getIntExtra("code", 0);
+
         imgCamera = findViewById(R.id.imgCamera);
         btnVisit = findViewById(R.id.btnVisit);
         imgCamera.setOnClickListener(new View.OnClickListener() {
@@ -94,4 +94,5 @@ public class VisitActivity extends AppCompatActivity {
             startActivityForResult(cameraIntent, REQUEST_IMAGE_CAMERA);
         }
     }
+
 }

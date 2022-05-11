@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mEmail = getIntent().getStringExtra("email");
+        mEmail = "tavidanner96@gmail.com";
         drawerLayout = findViewById(R.id.drawer_layout);
         ibProfile = findViewById(R.id.ibProfile);
         tvEmail = findViewById(R.id.tvEmail);
