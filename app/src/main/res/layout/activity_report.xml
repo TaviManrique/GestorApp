@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <TextView
             android:id="@+id/tvReportTitle"
             android:layout_width="match_parent"
@@ -101,6 +102,7 @@
             android:layout_height="match_parent"
             tools:listitem="@layout/item_product"
             android:layout_marginHorizontal="18dp"/>
+
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

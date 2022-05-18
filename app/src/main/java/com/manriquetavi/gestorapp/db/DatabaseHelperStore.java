@@ -142,14 +142,14 @@ public class DatabaseHelperStore extends SQLiteOpenHelper {
         return cursor;
     }
 
-    public void updateProduct(String row_id, String price, String wholesalePrice, Integer stock) {
+    public void updateProduct(Integer row_id, String price, String wholesalePrice, String stock) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_PRICE_PRODUCT, price);
         cv.put(COLUMN_WHOLESALE_PRICE_PRODUCT, wholesalePrice);
         cv.put(COLUMN_STOCK_PRODUCT, stock);
 
-        long result = db.update(TABLE_NAME_PRODUCT, cv, "_id=?", new String[]{row_id});
+        long result = db.update(TABLE_NAME_PRODUCT, cv, "_id=?", new String[]{String.valueOf(row_id)});
         if(result == -1) {
             Toast.makeText(context, "Failed update product", Toast.LENGTH_SHORT).show();
         } else {

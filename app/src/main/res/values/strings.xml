@@ -31,4 +31,5 @@
     <string name="text_point_of_sell">Point of Sell</string>
     <string name="text_support">Support</string>
     <string name="text_log_out">Log Out</string>
+    <string name="btn_sign_up">Register</string>
 </resources>

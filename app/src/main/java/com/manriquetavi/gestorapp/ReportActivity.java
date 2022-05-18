@@ -24,8 +24,8 @@ public class ReportActivity extends AppCompatActivity {
     FloatingActionButton fabAddStore;
 
     DatabaseHelperStore db_product;
-    ArrayList<String> product_names, product_prices, product_wholesale_prices;
-    ArrayList<Integer> product_stocks, product_ids;
+    ArrayList<String> product_names, product_prices, product_wholesale_prices, product_stocks;
+    ArrayList<Integer> product_ids;
     Integer mCode;
     ItemProductAdapter itemProductAdapter;
 
@@ -47,6 +47,11 @@ public class ReportActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        //DB
         db_product = new DatabaseHelperStore(ReportActivity.this);
         product_ids = new ArrayList<>();
         product_names = new ArrayList<>();
@@ -66,6 +71,7 @@ public class ReportActivity extends AppCompatActivity {
         );
         rvProducts.setAdapter(itemProductAdapter);
         rvProducts.setLayoutManager(new LinearLayoutManager(ReportActivity.this));
+        super.onResume();
     }
 
     void productDataInArrays() {
@@ -78,7 +84,7 @@ public class ReportActivity extends AppCompatActivity {
                 product_names.add(cursor.getString(1));
                 product_prices.add(cursor.getString(3));
                 product_wholesale_prices.add(cursor.getString(4));
-                product_stocks.add(cursor.getInt(5));
+                product_stocks.add(String.valueOf(cursor.getInt(5)));
             }
         }
     }
@@ -94,10 +100,18 @@ public class ReportActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.Option1){
-            Toast.makeText(this, "Save option", Toast.LENGTH_SHORT).show();
-            //Update data
-            finish();
+            saveProducts();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void saveProducts() {
+        for(int i = 0; i < product_ids.size(); i++) {
+            db_product.updateProduct(product_ids.get(i),
+                    product_prices.get(i),
+                    product_wholesale_prices.get(i),
+                    product_stocks.get(i));
+        }
+        finish();
     }
 }

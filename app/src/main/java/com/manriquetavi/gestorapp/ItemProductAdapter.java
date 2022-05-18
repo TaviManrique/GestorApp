@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -23,7 +24,7 @@ public class ItemProductAdapter extends RecyclerView.Adapter<ItemProductAdapter.
     private final ArrayList<String> product_names;
     private final ArrayList<String> product_prices;
     private final ArrayList<String> product_wholesale_prices;
-    private final ArrayList<Integer> product_stocks;
+    private final ArrayList<String> product_stocks;
 
     boolean isOnTextChanged = false;
 
@@ -33,7 +34,7 @@ public class ItemProductAdapter extends RecyclerView.Adapter<ItemProductAdapter.
             ArrayList<String> product_names,
             ArrayList<String> product_prices,
             ArrayList<String> product_wholesale_prices,
-            ArrayList<Integer> product_stocks
+            ArrayList<String> product_stocks
     ) {
         this.mContext = context;
         this.product_ids = product_ids;
@@ -56,7 +57,6 @@ public class ItemProductAdapter extends RecyclerView.Adapter<ItemProductAdapter.
         holder.etPriceProduct.setText(String.valueOf(product_prices.get(position)));
         holder.etWholesalePriceProduct.setText(String.valueOf(product_wholesale_prices.get(position)));
         holder.etStock.setText(String.valueOf(product_stocks.get(position)));
-
         holder.etPriceProduct.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -73,7 +73,6 @@ public class ItemProductAdapter extends RecyclerView.Adapter<ItemProductAdapter.
                 if(isOnTextChanged) {
                     isOnTextChanged = false;
                     product_prices.set(holder.getAdapterPosition(), editable.toString());
-                    Log.d("ItemProductAdapter", "afterTextChanged: " + product_prices);
                 }
             }
         });
@@ -94,7 +93,6 @@ public class ItemProductAdapter extends RecyclerView.Adapter<ItemProductAdapter.
                 if(isOnTextChanged) {
                     isOnTextChanged = false;
                     product_wholesale_prices.set(holder.getAdapterPosition(), editable.toString());
-                    Log.d("ItemProductAdapter", "afterTextChanged: " + product_wholesale_prices);
                 }
             }
         });
@@ -114,8 +112,7 @@ public class ItemProductAdapter extends RecyclerView.Adapter<ItemProductAdapter.
             public void afterTextChanged(Editable editable) {
                 if(isOnTextChanged) {
                     isOnTextChanged = false;
-                    product_stocks.set(holder.getAdapterPosition(), Integer.valueOf(editable.toString()));
-                    Log.d("ItemProductAdapter", "afterTextChanged: " + product_stocks);
+                    product_stocks.set(holder.getAdapterPosition(), editable.toString());
                 }
             }
         });
@@ -139,7 +136,6 @@ public class ItemProductAdapter extends RecyclerView.Adapter<ItemProductAdapter.
             etPriceProduct = itemView.findViewById(R.id.etPriceProduct);
             etWholesalePriceProduct = itemView.findViewById(R.id.etWholesalePriceProduct);
             etStock = itemView.findViewById(R.id.etStock);
-
         }
     }
 }
