@@ -29,10 +29,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 if (db_user.signIn(etEmail.getText().toString().trim(), etPassword.getText().toString().trim())) {
+                    Toast.makeText(LoginActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
                     intent.putExtra("email", etEmail.getText().toString().trim());
                     etEmail.setText("");
                     etPassword.setText("");
                     startActivity(intent);
+                } else {
+                    Toast.makeText(LoginActivity.this, "Credential Incorrect", Toast.LENGTH_SHORT).show();
                 }
             }
         });

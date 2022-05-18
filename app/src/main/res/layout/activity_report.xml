@@ -29,69 +29,70 @@
             android:layout_height="60dp"
             android:layout_marginTop="18dp"
             android:layout_marginHorizontal="18dp">
+
             <TextView
                 android:id="@+id/tvNameProduct"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.4"
                 android:layout_margin="1dp"
-                android:paddingHorizontal="8dp"
+                android:layout_weight="0.4"
                 android:background="@color/purple_500"
+                android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="2"
-                android:ellipsize="end"
-                android:textStyle="bold"
-                android:textColor="@color/black"
+                android:paddingHorizontal="8dp"
+                android:text="@string/text_products"
+                android:textColor="#7CB342"
                 android:textSize="18sp"
-                android:text="@string/text_products" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvPriceProduct"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.2"
                 android:layout_margin="1dp"
-                android:paddingHorizontal="8dp"
+                android:layout_weight="0.2"
                 android:background="@color/purple_500"
+                android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="2"
-                android:ellipsize="end"
-                android:textStyle="bold"
-                android:textColor="@color/black"
+                android:paddingHorizontal="8dp"
+                android:text="@string/text_price_cost"
+                android:textColor="#7CB342"
                 android:textSize="18sp"
-                android:text="@string/text_price_cost" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvWholesalePrice"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.2"
                 android:layout_margin="1dp"
-                android:paddingHorizontal="8dp"
+                android:layout_weight="0.2"
                 android:background="@color/purple_500"
+                android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="2"
-                android:ellipsize="end"
-                android:textStyle="bold"
-                android:textColor="@color/black"
+                android:paddingHorizontal="8dp"
+                android:text="@string/text_wholesale_price"
+                android:textColor="#7CB342"
                 android:textSize="18sp"
-                android:text="@string/text_wholesale_price" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvStock"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.2"
                 android:layout_margin="1dp"
-                android:paddingHorizontal="8dp"
+                android:layout_weight="0.2"
                 android:background="@color/purple_500"
+                android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="2"
-                android:ellipsize="end"
-                android:textStyle="bold"
-                android:textColor="@color/black"
+                android:paddingHorizontal="8dp"
+                android:text="@string/text_stock"
+                android:textColor="#7CB342"
                 android:textSize="18sp"
-                android:text="@string/text_stock" />
+                android:textStyle="bold" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -109,10 +110,11 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
+        android:contentDescription="@string/content_description_fab"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_add"
-        android:contentDescription="@string/content_description_fab"/>
+        tools:ignore="RedundantDescriptionCheck,ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

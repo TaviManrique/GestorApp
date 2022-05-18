@@ -1,13 +1,14 @@
 package com.manriquetavi.gestorapp;
 
-import android.app.Dialog;
+
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,19 +19,21 @@ import java.util.ArrayList;
 public class ItemProductAdapter extends RecyclerView.Adapter<ItemProductAdapter.ViewHolder>{
 
     private final Context mContext;
-    private final ArrayList product_ids;
-    private final ArrayList product_names;
-    private final ArrayList product_prices;
-    private final ArrayList product_wholesale_prices;
-    private final ArrayList product_stocks;
+    private final ArrayList<Integer> product_ids;
+    private final ArrayList<String> product_names;
+    private final ArrayList<String> product_prices;
+    private final ArrayList<String> product_wholesale_prices;
+    private final ArrayList<Integer> product_stocks;
+
+    boolean isOnTextChanged = false;
 
     ItemProductAdapter(
             Context context,
-            ArrayList product_ids,
-            ArrayList product_names,
-            ArrayList product_prices,
-            ArrayList product_wholesale_prices,
-            ArrayList product_stocks
+            ArrayList<Integer> product_ids,
+            ArrayList<String> product_names,
+            ArrayList<String> product_prices,
+            ArrayList<String> product_wholesale_prices,
+            ArrayList<Integer> product_stocks
     ) {
         this.mContext = context;
         this.product_ids = product_ids;
@@ -53,6 +56,69 @@ public class ItemProductAdapter extends RecyclerView.Adapter<ItemProductAdapter.
         holder.etPriceProduct.setText(String.valueOf(product_prices.get(position)));
         holder.etWholesalePriceProduct.setText(String.valueOf(product_wholesale_prices.get(position)));
         holder.etStock.setText(String.valueOf(product_stocks.get(position)));
+
+        holder.etPriceProduct.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                isOnTextChanged = true;
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(isOnTextChanged) {
+                    isOnTextChanged = false;
+                    product_prices.set(holder.getAdapterPosition(), editable.toString());
+                    Log.d("ItemProductAdapter", "afterTextChanged: " + product_prices);
+                }
+            }
+        });
+
+        holder.etWholesalePriceProduct.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                isOnTextChanged = true;
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(isOnTextChanged) {
+                    isOnTextChanged = false;
+                    product_wholesale_prices.set(holder.getAdapterPosition(), editable.toString());
+                    Log.d("ItemProductAdapter", "afterTextChanged: " + product_wholesale_prices);
+                }
+            }
+        });
+
+        holder.etStock.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                isOnTextChanged = true;
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(isOnTextChanged) {
+                    isOnTextChanged = false;
+                    product_stocks.set(holder.getAdapterPosition(), Integer.valueOf(editable.toString()));
+                    Log.d("ItemProductAdapter", "afterTextChanged: " + product_stocks);
+                }
+            }
+        });
     }
 
     @Override

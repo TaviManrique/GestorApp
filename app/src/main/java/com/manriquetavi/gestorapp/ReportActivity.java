@@ -24,8 +24,8 @@ public class ReportActivity extends AppCompatActivity {
     FloatingActionButton fabAddStore;
 
     DatabaseHelperStore db_product;
-    ArrayList<String> product_ids, product_names, product_prices, product_wholesale_prices;
-    ArrayList<Integer> product_stocks;
+    ArrayList<String> product_names, product_prices, product_wholesale_prices;
+    ArrayList<Integer> product_stocks, product_ids;
     Integer mCode;
     ItemProductAdapter itemProductAdapter;
 
@@ -74,7 +74,7 @@ public class ReportActivity extends AppCompatActivity {
             Toast.makeText(this, "No data products.", Toast.LENGTH_SHORT).show();
         } else {
             while (cursor.moveToNext()) {
-                product_ids.add(cursor.getString(0));
+                product_ids.add(cursor.getInt(0));
                 product_names.add(cursor.getString(1));
                 product_prices.add(cursor.getString(3));
                 product_wholesale_prices.add(cursor.getString(4));
@@ -92,7 +92,7 @@ public class ReportActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id =item.getItemId();
+        int id = item.getItemId();
         if(id == R.id.Option1){
             Toast.makeText(this, "Save option", Toast.LENGTH_SHORT).show();
             //Update data

@@ -27,6 +27,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -164,12 +165,10 @@ public class DatabaseHelperStore extends SQLiteOpenHelper {
         cv.put(COLUMN_EMAIL_USER, email);
         cv.put(COLUMN_NAME_USER, name);
         cv.put(COLUMN_PASSWORD_USER, password);
-        long result = db.insert(TABLE_NAME_USER, null, cv);
-
-        if(result == -1) {
-            Toast.makeText(context, "Welcome", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(context, "Welcome", Toast.LENGTH_SHORT).show();
+        try {
+            db.insert(TABLE_NAME_USER, null, cv);
+        } catch (Exception e) {
+            Log.d("addUser", "addUser: Ignore this error");
         }
     }
 

@@ -30,13 +30,13 @@
             android:name=".AddProductActivity"
             android:exported="false"
             android:label="Add Products"
-            android:parentActivityName=".ReportActivity" />
+            android:parentActivityName=".ReportActivity"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".ReportActivity"
             android:exported="false"
             android:label="Report products"
-            android:parentActivityName=".VisitActivity"
-            android:windowSoftInputMode="adjustResize" />
+            android:parentActivityName=".VisitActivity" />
         <activity
             android:name=".VisitActivity"
             android:exported="false"

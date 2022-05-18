@@ -74,7 +74,10 @@ public class MainActivity extends AppCompatActivity {
                 logOut(MainActivity.this);
             }
         });
+    }
 
+    @Override
+    protected void onResume() {
         //DB
         db_store = new DatabaseHelperStore(MainActivity.this);
         store_ids = new ArrayList<>();
@@ -96,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
         rvStores.setAdapter(itemStoreAdapter);
         rvStores.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         getName();
+        super.onResume();
     }
 
     private void logOut(Activity activity) {
