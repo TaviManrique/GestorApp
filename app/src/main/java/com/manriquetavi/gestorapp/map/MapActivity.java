@@ -1,4 +1,4 @@
-package com.manriquetavi.gestorapp;
+package com.manriquetavi.gestorapp.map;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.manriquetavi.gestorapp.R;
 import com.manriquetavi.gestorapp.databinding.ActivityMapBinding;
 
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {

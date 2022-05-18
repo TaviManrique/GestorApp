@@ -1,4 +1,4 @@
-package com.manriquetavi.gestorapp;
+package com.manriquetavi.gestorapp.visit;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +18,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.manriquetavi.gestorapp.R;
+import com.manriquetavi.gestorapp.report.ReportActivity;
 
 public class VisitActivity extends AppCompatActivity {
 

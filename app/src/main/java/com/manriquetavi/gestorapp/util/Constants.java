@@ -1,4 +1,4 @@
-package com.manriquetavi.gestorapp;
+package com.manriquetavi.gestorapp.util;
 
 public final class Constants {
     //Database

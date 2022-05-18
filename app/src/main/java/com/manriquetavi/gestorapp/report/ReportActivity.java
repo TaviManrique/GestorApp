@@ -1,4 +1,4 @@
-package com.manriquetavi.gestorapp;
+package com.manriquetavi.gestorapp.report;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.manriquetavi.gestorapp.R;
 import com.manriquetavi.gestorapp.db.DatabaseHelperStore;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.manriquetavi.gestorapp;
+package com.manriquetavi.gestorapp.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.manriquetavi.gestorapp.R;
 import com.manriquetavi.gestorapp.db.DatabaseHelperStore;
+import com.manriquetavi.gestorapp.main.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

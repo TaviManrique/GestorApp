@@ -1,14 +1,13 @@
-package com.manriquetavi.gestorapp;
+package com.manriquetavi.gestorapp.report;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.manriquetavi.gestorapp.R;
 import com.manriquetavi.gestorapp.db.DatabaseHelperStore;
 
 public class AddProductActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.manriquetavi.gestorapp;
+package com.manriquetavi.gestorapp.main;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
